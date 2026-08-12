@@ -1,8 +1,9 @@
-let http = require("http");
+const http = require("http");
+const fs = require('node:fs');
+const ini = require('ini');
 
-const fs =require('node:fs');
-
-let port = 3000;
+const config = ini.parse(fs.readFileSync('./settings.ini', 'utf-8'));
+const port = config.server.port;
 
 let server = http.createServer((req, res) => {
   
@@ -10,7 +11,7 @@ let server = http.createServer((req, res) => {
   let url = req.url.replace("/", "");
 
   if(url === ""){
-    url = 'index'
+    url = config.navigate.index;
   }
   
   console.log(url);

@@ -1,0 +1,22 @@
+{
+  "name": "web-girl",
+  "version": "1.0.0",
+  "description": "A simple web server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/k4rlla/web-girl"
+  },
+  "keywords": [
+    "web-server"
+  ],
+  "author": "Karla Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "ini": "^7.0.0"
+  }
+}
