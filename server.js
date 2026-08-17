@@ -4,6 +4,7 @@ const ini = require('ini');
 
 const config = ini.parse(fs.readFileSync('./settings.ini', 'utf-8'));
 const port = config.server.port;
+const www_dir = config.documents.www_dir;
 
 let server = http.createServer((req, res) => {
   
@@ -15,7 +16,8 @@ let server = http.createServer((req, res) => {
   }
   
   console.log(url);
-  fs.readFile(`${url}.html`, 'utf8', (err,data) =>{    
+  
+  fs.readFile(`./${www_dir}/${url}.html`, 'utf8', (err,data) =>{    
     conteudo = data;
     res.setHeader('Content-type', 'text/html');
     res.end(conteudo);
